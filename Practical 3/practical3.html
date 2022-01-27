@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Visualization</title>
+</head>
+<body>
+    <h1>Practical 3</h1>
+    <h3>Draw Basic shapes using SVG</h3>
+
+    <!--SVG stands for Scalable Vector Graphics.SVG defines vector-based graphics in XML format.-->
+
+    <svg id="svg" width="1500" height=1500>
+        
+        <!--Drawing line using SVG-->
+
+        <!--The x1 attribute defines the start of the line on the x-axis.
+            The y1 attribute defines the start of the line on the y-axis
+            The x2 attribute defines the end of the line on the x-axis
+            The y2 attribute defines the end of the line on the y-axis-->
+        
+        <line x1="0" y1="100" x2="200" y2="100" style="stroke:rgb(255,0,0); stroke-width: 2"/>
+        
+        
+        <!--Drawing circle using SVG-->
+
+        <!--The cx and cy attributes define the x and y coordinates of the center of the circle. 
+            The r attribute defines the radius of the circle-->
+        
+        <circle cx="60" cy="200" r="50" stroke="black" stroke-width="3" fill="red" />
+
+        
+        <!--The id attribute of the <radialGradient> tag defines a unique name for the gradient
+            The cx, cy and r attributes define the outermost circle and the fx and fy define the innermost circle
+            The color range for a gradient can be composed of two or more colors. 
+            Each color is specified with a <stop> tag. 
+            The offset attribute is used to define where the gradient color begin and end
+T           The fill attribute links the ellipse element to the gradient -->
+        
+        <defs>
+            <radialGradient id="grad1" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+                <stop offset="0%" style="stop-color: rgb(255,255,0); stop-opacity: 1"/>
+                <stop offset="100%" style="stop-color: rgb(0,0,255); stop-opacity: 1"/>
+            </radialGradient>
+        </defs>
+        
+        <!--Drawing rectangle using SVG-->
+
+        <!--The width and height attributes of the <rect> element define the height and the width of the rectangle
+            The style attribute is used to define CSS properties for the rectangle
+            The CSS fill property defines the fill color of the rectangle
+            The CSS stroke-width property defines the width of the border of the rectangle
+            The CSS stroke property defines the color of the border of the rectangle-->
+        
+        <rect x="20" y="300" width="100" height="50" style="fill:url(#grad1); stroke:black" />
+        
+        
+        <!--Drawing Ellipse using SVG-->
+        
+        <!--The cx attribute defines the x coordinate of the center of the ellipse
+            The cy attribute defines the y coordinate of the center of the ellipse
+            The rx attribute defines the horizontal radius
+            The ry attribute defines the vertical radius-->
+        
+        <ellipse cx="100" cy="450" rx="100" ry="50" style="fill:url(#grad1); stroke:black"/>
+
+    </svg>
+</body>
+</html>
