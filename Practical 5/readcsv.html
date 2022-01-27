@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPL 2022 Prizing</title>
+
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.8.3/jquery.csv.min.js"></script>
+    <style>
+        table 
+        {
+                border: 1px solid black;
+                border-collapse: collapse;
+                font-family: Arial, Helvetica, sans-serif;
+        }
+
+        table th 
+        {
+            border: solid black;
+            border-collapse: collapse;
+            background: blue;
+            font-size: x-large;
+            font-weight: 600;
+            padding: 20px 20px;
+            text-align: center;
+            color: white;
+        }
+
+        table td 
+        {
+            border: solid black;
+            border-collapse: collapse;
+            padding: 3px 10px;
+            text-align: center;
+
+        }
+    </style>
+</head>
+<body>
+    <h1> Read the data from  .csv file and display contents in a tabular form</h1>
+    <div class="result">
+    <table id="theResult">
+    </div>
+
+    <script>
+        $(document).ready(function () 
+        {
+            $.get('ipl2022.csv', function (theData) 
+            {
+                var data = $.csv.toObjects(theData);
+                var theHtml = createTable(data);
+                $('#theResult').html(theHtml);
+            });
+        });
+        
+        function createTable(data) 
+        {
+            var html = '';
+            if (data[0].constructor === Object) 
+            {
+                html += '<tr>\r\n';
+                for (var item in data[0]) 
+                {
+                    html += '<th>' + item + '</th>\r\n';
+                }
+        
+                html += '</tr>\r\n';
+        
+                for (var row in data) 
+                {
+                    html += '<tr>\r\n';
+        
+                    for (var item in data[row]) 
+                    {
+                        html += '<td>' + data[row][item] + '</td>\r\n';
+        
+                    }
+        
+                    html += '</tr>\r\n';
+                }
+            }
+        
+            return html;
+        }
+    
+    </script>
+</body>
+</html>

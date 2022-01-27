@@ -1,0 +1,68 @@
+{
+    "ipl":{
+        "country":[
+            {
+                "name":"KL Rahul",
+                "team":"LSG",
+                "role":"WK-Batsman",
+                "prize":"17 Crores"
+            },
+            {
+                "name":"Rohit Sharma",
+                "team":"MI",
+                "role":"Batsman",
+                "prize":"16 Crores"
+            },
+            {
+                "name":"Ravindra Jadeja",
+                "team":"CSK",
+                "role":"All-rounder",
+                "prize":"16 Crores"
+            },
+            {
+                "name":"Rishabh Pant",
+                "team":"DC",
+                "role":"WK-Batsman",
+                "prize":"16 Crores"
+            },
+            {
+                "name":"Virat Kohli",
+                "team":"RCB",
+                "role":"Batsman",
+                "prize":"15 Crores"
+            },
+            {
+                "name":"Hardik Pandya",
+                "team":"Ahmedabad",
+                "role":"All-rounder",
+                "prize":"15 Crores"
+            },
+            {
+                "name":"Kane Williamson",
+                "team":"SRH",
+                "role":"Batsman",
+                "prize":"14 Crores"
+            },
+            {
+                "name":"Sanju Samson",
+                "team":"RR",
+                "role":"WK-Batsman",
+                "prize":"14 Crores"
+            },
+            {
+                "name":"Andre Russell",
+                "team":"KKR",
+                "role":"All-rounder",
+                "prize":"12 Crores"
+            },
+            {
+                "name":"Mayank Agarwal",
+                "team":"PBKS",
+                "role":"Batsman",
+                "prize":"12 Crores"
+            }
+
+
+        ]
+    }
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Highest Prize-Country Wise</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+
+    <style>
+        
+        table 
+        {
+            border: 1px solid black;
+            border-collapse: collapse;
+            font-family: Arial, Helvetica, sans-serif;
+
+        }
+
+        table th 
+        {
+            border: solid black;
+            border-collapse: collapse;
+            background: #4141da;
+            font-size: x-large;
+            font-weight: 600;
+            padding: 20px 20px;
+            text-align: center;
+            color: white;
+
+        }
+
+        table td 
+        {
+            border: solid black;
+            border-collapse: collapse;
+            padding: 5px 10px;
+            text-align: center;
+        }
+
+    </style>
+
+</head>
+<body>
+    <h1>Read the data XML file and display contents in a tabular form</h1>
+
+    <table id="ipl">
+        <tr>
+            <th>Player Name</th>
+            <th>Nationality</th>
+            <th>Team</th>
+            <th>Prize(in Crores)</th>
+        </tr>
+    </table>
+    
+    <script>
+        $(document).ready
+        (function () 
+            {
+                $.ajax({
+                        type: "GET",
+                        url: "ipl2022.xml",
+                        dataType: "xml",
+                        success: xmlParser
+                    });
+        });
+
+        function xmlParser(xml) 
+        {
+            $(xml).find('country').each(function () 
+            {
+                var theName = $(this).find('player').text();
+                var theNation = $(this).find('nation').text();
+                var theTeam = $(this).find('team').text();
+                var thePrize = $(this).find('prize').text();
+
+                $('#ipl').append('<tr><td>' + theName + '</td><td>' + theNation + '</td><td>' + theTeam + '</td><td>' + thePrize + '</td></tr>');
+            });
+        }
+    </script>
+</body>
+</html>

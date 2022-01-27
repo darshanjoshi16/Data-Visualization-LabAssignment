@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPL 2022 Retantion/Draft Picks</title>
+
+    <style>
+        
+        table 
+        {
+                border: solid black;
+                border-collapse: collapse;
+                border-spacing: 1px;
+                margin-right: 200px;
+                font-family: Arial, Helvetica, sans-serif;
+        }
+
+        table th 
+        {
+                    border: solid black;
+                    border-collapse: collapse;
+                    background: #0306b9;
+                    font-size: x-large;
+                    font-weight: 600;
+                    padding: 20px 20px;
+                    text-align: center;
+                    color: white;
+        }
+
+        table td 
+        {
+            border: solid black;
+            border-collapse: collapse;
+            padding: 5px 10px;
+            text-align: center;
+
+        }
+
+
+    </style>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script>
+            var userListData = [];
+            $(document).ready(function () {
+            populateTable();
+            });
+
+            function populateTable() 
+            {
+                var tableContent = '';
+                $.get('ipl2022.txt', function (data) 
+                {
+                    //this will split the string into array line by line
+                    var lineByline = data.split('\n');
+                    //here we're iterating the array which you've created and printing the values
+                    $.each(lineByline, function (key, value) 
+                    {
+                        tableContent += '<tr>';
+                        tableContent += '<td>' + value + '</td>';
+                        tableContent += '</tr>';
+                    });
+                
+                    $('#tablediv').html(tableContent);
+                });
+            };
+    </Script>
+</head>
+<body>
+    <h2>Read a text file and display contents in a tabular form</h2>
+    <table width="40%" id="tab">
+        <thead>
+            <tr>
+                <th>IPL 2022-Retantions and Draft Picks</th>
+            </tr>
+            <thead>
+            <tbody id="tablediv">
+            </tbody>
+    </table>
+        
+</body>
+</html>

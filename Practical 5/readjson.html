@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Highest Prize-Team wise</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+
+    <style>
+        
+        table 
+        {
+            border: 1px solid black;
+            border-collapse: collapse;
+            font-family: Arial, Helvetica, sans-serif;
+
+        }
+
+        table th 
+        {
+            border: solid black;
+            border-collapse: collapse;
+            background: red;
+            font-size: x-large;
+            font-weight: 600;
+            padding: 20px 20px;
+            text-align: center;
+            color: white;
+
+        }
+
+        table td
+         {
+            border: solid black;
+            border-collapse: collapse;
+            padding: 5px 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Read JSON Data and display contents in a tabular form</h1>
+    
+    <table id="ipl">
+        <tr>
+            <th>Name</th>
+            <th>Team</th>
+            <th>Role</th>
+            <th>Prize</th>
+        </tr>
+    </table>
+
+    <script>
+        $(document).ready(function () 
+        {
+            $.getJSON("ipl2022.json", function (data) 
+            {
+                $.each(data.ipl.country, function (k, v) 
+                {
+                    var theName = v.name;
+                    var theteam = v.team;
+                    var therole = v.role;
+                    var theprize = v.prize;
+
+                    $('#ipl').append('<tr><td>' + theName + '</td><td>' + theteam +'</td><td>' + therole + '</td><td>' + theprize + '</td></tr>');
+                });
+            });
+        });     
+
+    </script>
+</body>
+</html>
