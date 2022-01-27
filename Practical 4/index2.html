@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demonstrate various curves using SVG Path element</title>
+</head>
+<body>
+
+    <h3>1. Triangle using SVG Path Element</h3>
+    
+    <svg height="210" width="400" stroke="red">
+        <path d="M150 0 L75 200 L225 200 Z"  stroke="Yellow" stroke-width='4' fill="blue"/>
+    </svg>
+    
+    <h3>2. Bezier Curve using SVG Path Element</h3>
+
+    <svg height="400" width="450">
+        <path id="lineAB" d="M 100 350 l 150 -300" stroke="blue"
+        stroke-width="3" fill="none" />
+        <path id="lineBC" d="M 250 50 l 150 300" stroke="blue"
+        stroke-width="3" fill="none" />
+        <path d="M 175 200 l 150 0" stroke="red" stroke-width="3"
+        fill="none" />
+        <path d="M 100 350 q 150 -300 300 0" stroke="green"
+        stroke-width="5" fill="none" />
+        <!-- Mark relevant points -->
+        <g stroke="black" stroke-width="3" fill="black">
+          <circle id="pointA" cx="100" cy="350" r="3" />
+          <circle id="pointB" cx="250" cy="50" r="3" />
+          <circle id="pointC" cx="400" cy="350" r="3" />
+        </g>
+      </svg>
+
+      <h3>3. Any Pattern using SVG path Element</h3>
+      
+      <svg viewBox="500 500 ">
+        <!--Moving point to M10 10 200 200
+        making a line to 10 200 200 10 -->
+        <path d="M 10 10 200 200 L 10 200 L200 10" fill="red">
+        </path>
+      </svg>
+</body>
+</html>
