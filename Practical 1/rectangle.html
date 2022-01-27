@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rectangle Drawing</title>
+</head>
+<body>
+    <h1>Practical 1</h1>
+    <h3>Rectangle Drawing</h3>
+
+    <canvas id="can2" width="300" height="300" style=" border: 15px solid #333945"></canvas>
+
+    <script>
+        
+        var canvas = document.getElementById("can2");
+        var context = canvas.getContext("2d");
+        context.lineWidth = 5;
+        context.strokeStyle = "#ff362e";
+        context.lineCop="square";
+		context.moveTo(50,50);
+        context.lineTo(150,50);
+        context.lineTo(150,100);
+		context.lineTo(50,100);
+        context.lineTo(50,50);
+		context.stroke();
+
+
+    </script>
+    
+</body>
+</html>
