@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table without DataTable Library</title>
+    <script src="jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script>
+            function usCurrencyToFloat(currency) 
+            {
+                currency = currency.replace(/\$/g, '');
+                currency = currency.replace(/,/g, '');
+                return parseFloat(currency);
+            };
+
+            $(function () 
+            {
+                $("tbody").find("tr:odd").addClass("row-odd");
+                $("tbody").find("td").filter(function (index) {
+                return !isNaN(usCurrencyToFloat($(this).text()));
+                }).addClass("cell-number");
+            })
+
+
+            $(document.body).on("mouseover", "td, th", function () 
+            {
+                    var index = $(this).index(),
+                    row = $(this).parent(),
+                    trs = $("tr");
+
+                    row.children().addClass("highlight");
+
+                    for (var i = 0; i < trs.length; i++) 
+                    {
+                        trs.eq(i).children().eq(index).addClass("highlight");
+                    }  
+            });
+
+            $(document.body).on("mouseout", "td, th", function () 
+            {
+                var index = $(this).index(),
+                row = $(this).parent(),
+                trs = $("tr");
+                
+                row.children().removeClass("highlight");
+                for (var i = 0; i < trs.length; i++) 
+                {
+                    trs.eq(i).children().eq(index).removeClass("highlight");
+                }
+            });
+    </script>
+    <table>
+        <caption>Highest-grossing films</caption>
+
+        <thead>
+
+            <tr>
+              <th scope="col">Year</th>
+              <th scope="col">R1</th>
+              <th scope="col">Gross (£ millions)</th>
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            <tr>
+                <td>2008</th>
+                <td>Mamma Mia</td>
+                <td>69.17</td>
+            </tr>
+
+            <tr>
+                <td>2007</th>
+                <td>Harry Potter and the Order of the Phoenix</td>
+                <td>49.43</td>
+            </tr>
+
+            <tr>
+                <td>2006</th>
+                <td>Casino Royale</td>
+                <td>55.48</td>
+            </tr>
+
+            <tr>
+                <td>2005</th>
+                <td>Harry Potter and the Goblet of Fire</td>
+                <td>48.59</td>
+            </tr>
+                
+            <tr>
+                <td>2004</th>
+                <td>Shrek 2</td>
+                <td>48.10</td>
+            </tr>
+                
+            <tr>
+                <td>2003</th>
+                <td>Lord of the Rings: Return of the King</td>
+                <td>60.67</td>
+            </tr>
+            
+            <tr>
+                <td>2002</th>
+                <td>Lord of the Rings: The Two Towers</td>
+                <td>56.47</td>
+            </tr>
+                
+        </tbody>
+    </table>
+
+</body>
+</html>
