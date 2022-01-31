@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Highest-grossing films</title>
+        <link rel="stylesheet" type="text/css" href="jquery.dataTables_themeroller.css">
+        <link rel="stylesheet" type="text/css" href="jquery-ui.css">
+        <script type="text/javascript" charset="utf8" src="jquery-1.11.1.min.js"></script>
+        <script type="text/javascript" charset="utf8" src="jquery-ui.min.js"></script>
+        <script type="text/javascript" charset="utf8" src="jquery.dataTables.min.js"></script>
+
+        <script type="text/javascript">
+        
+                $(function () 
+                {
+                    $("#films").dataTable(
+                        {
+                            bJQueryUI: true
+                        });
+                });
+        </script>
+    </head>
+
+    
+    <body>
+        <table id="films">
+            <caption>Highest-grossing films</caption>
+            
+            <colgroup>
+                <col class="col-header">
+                <col class="col-amount">
+                <col class="col-mean">
+            </colgroup>
+            
+            <thead>
+                <tr>
+                    <th scope="col">Year</th>
+                    <th scope="col">R1</th>
+                    <th scope="col">Gross (£ millions)</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <th scope="row">2008</th>
+                    <td>Mamma Mia</td>
+                    <td>69.17</td>
+                </tr>
+                
+                <tr>
+                    <th scope="row">2007</th>
+                    <td>Harry Potter and the Order of the Phoenix</td>
+                    <td>49.43</td>
+                </tr>
+                
+                <tr>
+                    <th scope="row">2006</th>
+                    <td>Casino Royale</td>
+                    <td>55.48</td>
+                </tr>
+                
+                <tr>
+                    <th scope="row">2005</th>
+                    <td>Harry Potter and the Goblet of Fire</td>
+                    <td>48.59</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">2004</th>
+                    <td>Shrek 2</td>
+                    <td>48.10</td>
+                </tr>
+                    
+                <tr>
+                    <th scope="row">2003</th>
+                    <td>Lord of the Rings: Return of the King</td>
+                    <td>60.67</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">2002</th>
+                    <td>Lord of the Rings: The Two Towers</td>
+                    <td>56.47</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>
