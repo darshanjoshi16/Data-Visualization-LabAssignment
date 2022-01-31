@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pie Chart</title>
+    </head>
+
+    <body onload="draw();">
+        
+        <h1>Pie Chart</h1>
+
+        <canvas id="Canvas" width="300" height="300" style="background-color: aquamarine; border:1px solid #333945;">
+            Your browser does not support HTML5 !
+        </canvas>
+        
+        <script>
+            function draw() 
+            {
+                var canvas = document.getElementById('Canvas');
+                var ctx = canvas.getContext('2d');
+                var beginAngle = 0;
+                var endAngle = 0;
+                var data = [150, 70, 55];
+                var total = 0;
+                var colors = ["green", "blue", "yellow"]
+
+                for (var i = 0; i < data.length; i++) 
+                {
+                    total += data[i];
+                }
+
+                ctx.strokeStyle = "white"
+                ctx.lineWidth = 2;
+
+                for (var j = 0; j < data.length; j++) 
+                {
+                    endAngle = beginAngle + (Math.PI * 2 * (data[j] / total));
+                    ctx.fillStyle = colors[j];
+                    ctx.beginPath();
+                    ctx.moveTo(125, 125);
+                    ctx.arc(125, 125, 100, beginAngle, endAngle, false);
+                    ctx.closePath();
+                    ctx.fill();
+                    ctx.stroke();
+                    beginAngle = endAngle;
+                }
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fonts</title>
+</head>
+<body onload="draw();">
+
+    <h1>Text of Various Fonts and Sizes</h1>
+    
+    <canvas id="canvas" height="2000" width="1000"></canvas>
+
+    <script>
+        function draw() 
+        {
+            var canvas = document.getElementById('canvas');
+            var ctx = canvas.getContext('2d');
+
+            ctx.font = "80px fantasy";
+            ctx.fillStyle = "#30D5C8";
+            ctx.fillText("On Your Left!!", 70, 80);
+
+            ctx.font = "70px sans-serif";
+            ctx.strokeStyle = "violet";
+            ctx.strokeText("Wakanda Forever!!", 190, 160);
+            ctx.font = "normal bold 18px serif";
+
+            ctx.font = "italic 60px serif";
+            ctx.fillStyle = "red";
+            ctx.fillText("I'm IronMan!", 110, 230);
+
+            ctx.font = "small-caps bolder 45px cursive";
+            ctx.fillStyle = "orange";
+            ctx.fillText("We're in the Endgame now!", 210, 290);
+
+            ctx.font = "35px serif";
+            ctx.fillStyle = "#01796F";
+            ctx.fillText('Excelsior!', 150, 345);
+        }
+    </script>
+
+</body>
+</html>
