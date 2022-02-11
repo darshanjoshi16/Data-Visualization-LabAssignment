@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSV to Chart</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+</head>
+<body>
+    <h1>CSV Data Imported</h1>
+    <canvas style="border:1px solid #000000;" id="chart1" width="700" height="400"></canvas>
+</body>
+<script>
+    $(document).ready(function () 
+    {
+        $.get("ipl2022.csv", function (data) 
+        {
+            var theChart = document.getElementById('chart1');
+            var ctx = theChart.getContext('2d');
+            var chartHeight = 400;
+            var theWidth = 75;
+            var theSpace = 100;
+            var theX = 0;
+            var theY = 0;
+            var theFills = ['pink', 'blue', 'orange', 'purple', 'cyan'];
+            var j = 0;
+            var thePoints = data.split('\n');
+            
+            for(i=1;i<thePoints.length;i++)
+            {
+                var theHeight = parseInt(thePoints[i]);
+                theY = chartHeight - theHeight;
+                theX = theX + theSpace;
+                ctx.fillStyle = theFills[j];
+                ctx.fillRect(theX, theY, theWidth, theHeight);
+                ++j;
+            }
+        });
+    });
+        
+</script>
+</html>

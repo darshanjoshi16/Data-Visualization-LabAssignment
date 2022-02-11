@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ipl>
+    
+    <country name="India">
+        <player>KL Rahul</player>
+        <prize>17</prize>
+    </country>
+
+    <country name="Afghanistan">
+        <player>Rashid Khan</player>
+        <prize>15</prize>
+    </country>
+
+    <country name="NewZealand">
+        <player>Kane Williamson</player>
+        <prize>14</prize>
+    </country>
+
+    <country name="West-Indies">
+        <player>Andre Russell</player>
+        <prize>12</prize>
+    </country>
+
+    <country name="Australia">
+        <player>Glenn Maxwell</player>
+        <prize>11</prize>
+    </country>
+
+    <country name="England">
+        <player>Jos Buttler</player>
+        <prize>10</prize>
+    </country>
+
+    <country name="South Africa">
+        <player>Anrich Nortje</player>
+        <prize>6.5</prize>
+    </country>
+
+
+</ipl>

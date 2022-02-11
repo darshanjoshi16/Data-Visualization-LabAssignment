@@ -1,0 +1,27 @@
+{
+    "ipl":{
+        "country":[
+            {
+                "name":"KL Rahul",
+                "prize":"17"
+            },
+            {
+                "name":"Rohit Sharma",
+                "prize":"16"
+            },
+            {
+                "name":"Virat Kohli",
+                "prize":"15"
+            },
+            {
+                "name":"Kane Williamson",
+                "prize":"14"
+            },
+            {
+                "name":"Andre Russell",
+                "prize":"12"
+            }
+
+        ]
+    }
+}
