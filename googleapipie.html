@@ -1,0 +1,29 @@
+<head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Name', 'Runs'],
+          ['Virat Kohli',     973],
+          ['David Warner',      848],
+          ['Chris Gayle',  733],
+          ['AB DeVilliers', 687],
+          ['KL Rahul',    670]
+        ]);
+
+        var options = {
+          title: 'IPL Top Scorers',
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="piechart" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>
+
